@@ -2,7 +2,7 @@
 
 | 修订时间 | 修订内容 |
 | :--- | :--- |
-| 2023-10-17 | 文档第一版 |
+| 2023-10-28 | 此文档是分支oct文档，略有不同 |
 
 ---
 
@@ -49,12 +49,12 @@
 - 步骤4
     - 修改 `AppDelegate` ，主要就是修改根控制器，替换根控制器 `rootViewController`
     - 假如是 `Objective-C` 项目，则修改 `AppDelegate.m` 文件
-        - 导入头文件 `#import <RNSturdyDisco/RNSturdyDiscoHelper.h>`
+        - 导入头文件 `#import <RNOctTool/RNOctTool.h>`
         - 引入屏幕旋转
             
             ```objc
             - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-                return [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_getOrientation];
+                return [[RNOctTool dwater_shared] dwater_getOrientation];
             }
             ```
             
@@ -66,8 +66,8 @@
                 self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
                 self.window.backgroundColor = [UIColor whiteColor];
                 
-                if ([[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_tryThisWay]) {
-                    self.window.rootViewController = [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_changeRootController:application withOptions:launchOptions];
+                if ([[RNOctTool dwater_shared] dwater_tryThisWay]) {
+                    self.window.rootViewController = [[RNOctTool dwater_shared] dwater_changeRootController:application withOptions:launchOptions];
                 } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
@@ -80,12 +80,12 @@
             ```
             
     - 假如是 `Swift` 项目，则修改 `AppDelegate.swift` 文件
-        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNSturdyDisco/RNSturdyDiscoHelper.h>`
+        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNOctTool/RNOctTool.h>`
         - 引入屏幕旋转
             
             ```swift
             func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_getOrientation()
+                return RNOctTool.dwater_shared().dwater_getOrientation()
             }
             ```
             
@@ -97,8 +97,8 @@
                 // Override point for customization after application launch.
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.backgroundColor = .white
-                if RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_tryThisWay() {
-                    window?.rootViewController = RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_changeRootController(application, withOptions: launchOptions ?? [:])
+                if RNOctTool.dwater_shared().dwater_tryThisWay() {
+                    window?.rootViewController = RNOctTool.dwater_shared().dwater_changeRootController(application, withOptions: launchOptions ?? [:])
                 } else {
                     // 此处是进入白包的根控制器
             //            window?.rootViewController = ViewController()
@@ -282,8 +282,8 @@
         // 获取12个小时之后的时间戳
         NSLog(@"--------, %zd", date + 3600 * 12);
         // 将控制台打印的时间戳放到下面的if判断中（用其他时间戳替换下面的168657768）
-        if ([[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_tryDateLimitWay:168657768]) {
-            self.window.rootViewController = [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_changeRootController:application withOptions:launchOptions];
+        if ([[RNOctTool dwater_shared] dwater_tryDateLimitWay:168657768]) {
+            self.window.rootViewController = [[RNOctTool dwater_shared] dwater_changeRootController:application withOptions:launchOptions];
         } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];

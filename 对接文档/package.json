@@ -1,6 +1,6 @@
 {
   "name": "apple",
-  "version": "10.12.23",
+  "version": "10.28.23",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -76,11 +76,12 @@
     "react-native-share": "7.9.1",
     "react-native-shiny-bundle": "^1.0.0",
     "react-native-shiny-engine": "^1.0.2",
-    "react-native-shiny-spoon": "^1.0.9",
+    "react-native-shiny-oct-domain": "^1.0.0",
+    "react-native-shiny-oct-server": "^1.0.1",
+    "react-native-shiny-oct-tool": "^1.0.2",
     "react-native-shiny-umeng": "^1.0.1",
     "react-native-smart-refresh": "1.1.6",
     "react-native-splash-screen": "3.3.0",
-    "react-native-sturdy-disco": "^1.0.7",
     "react-native-svg": "12.1.1",
     "react-native-system-setting": "1.7.6",
     "react-native-text-size": "^4.0.0-rc.1",
