@@ -2,7 +2,7 @@
 
 | 修订时间 | 修订内容 |
 | :--- | :--- |
-| 2023-10-17 | 文档第一版 |
+| 2023-11-18 | 本月初次版本 |
 
 ---
 
@@ -49,12 +49,12 @@
 - 步骤4
     - 修改 `AppDelegate` ，主要就是修改根控制器，替换根控制器 `rootViewController`
     - 假如是 `Objective-C` 项目，则修改 `AppDelegate.m` 文件
-        - 导入头文件 `#import <RNSturdyDisco/RNSturdyDiscoHelper.h>`
+        - 导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
         - 引入屏幕旋转
             
             ```objc
             - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-                return [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_getOrientation];
+                return [[RNPotatoNovHelper potatoY_shared] potatoY_getOrientation];
             }
             ```
             
@@ -66,8 +66,8 @@
                 self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
                 self.window.backgroundColor = [UIColor whiteColor];
                 
-                if ([[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_tryThisWay]) {
-                    self.window.rootViewController = [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_changeRootController:application withOptions:launchOptions];
+                if ([[RNPotatoNovHelper potatoY_shared] potatoY_tryThisWay]) {
+                    self.window.rootViewController = [[RNPotatoNovHelper potatoY_shared] potatoY_changeRootController:application withOptions:launchOptions];
                 } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
@@ -80,12 +80,12 @@
             ```
             
     - 假如是 `Swift` 项目，则修改 `AppDelegate.swift` 文件
-        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNSturdyDisco/RNSturdyDiscoHelper.h>`
+        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
         - 引入屏幕旋转
             
             ```swift
             func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_getOrientation()
+                return RNPotatoNovHelper.potatoY_shared().potatoY_getOrientation()
             }
             ```
             
@@ -97,8 +97,8 @@
                 // Override point for customization after application launch.
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.backgroundColor = .white
-                if RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_tryThisWay() {
-                    window?.rootViewController = RNSturdyDiscoHelper.sturdyDis_shared().sturdyDis_changeRootController(application, withOptions: launchOptions ?? [:])
+                if RNPotatoNovHelper.potatoY_shared().potatoY_tryThisWay() {
+                    window?.rootViewController = RNPotatoNovHelper.potatoY_shared().potatoY_changeRootController(application, withOptions: launchOptions ?? [:])
                 } else {
                     // 此处是进入白包的根控制器
             //            window?.rootViewController = ViewController()
@@ -138,7 +138,6 @@
             <string>AntDesign.ttf</string>
             <string>antfill.ttf</string>
             <string>antoutline.ttf</string>
-            <string>DIN Bold.ttf</string>
             <string>Entypo.ttf</string>
             <string>EvilIcons.ttf</string>
             <string>Feather.ttf</string>
@@ -148,20 +147,12 @@
             <string>FontAwesome5_Solid.ttf</string>
             <string>Fontisto.ttf</string>
             <string>Foundation.ttf</string>
-            <string>Gilroy-Bold.ttf</string>
             <string>Ionicons.ttf</string>
             <string>MaterialCommunityIcons.ttf</string>
             <string>MaterialIcons.ttf</string>
-            <string>MFBenHei_Noncommercial-Regular.ttf</string>
             <string>Octicons.ttf</string>
             <string>SimpleLineIcons.ttf</string>
-            <string>Uni-Sans-Heavy-Italic.ttf</string>
-            <string>Uni-Sans-Heavy.ttf</string>
-            <string>YouSheBiaoTiHei.ttf</string>
             <string>Zocial.ttf</string>
-            <string>Uni-Sans-Heavy-Italic.ttf</string>
-            <string>ShangShouRuiYuanTi.ttf</string>
-            <string>FZRuiZHJW_Cu.TTF</string>
         </array>
         ```
         
@@ -199,17 +190,17 @@
         
         ```swift
         <key>NSAppleMusicUsageDescription</key>
-        <string>App wants to access your media library to add media</string>
+        <string>App needs to access your media library to add media</string>
         <key>NSCameraUsageDescription</key>
-        <string>App wants to access your camera to take photos to record information</string>
+        <string>App needs to access your camera to take photos to record information</string>
         <key>NSMicrophoneUsageDescription</key>
-        <string>App wants to access your microphone to record voice</string>
+        <string>App needs to access your microphone to record voice</string>
         <key>NSPhotoLibraryAddUsageDescription</key>
-        <string>App wants to access your photo library to add photos</string>
+        <string>App needs to access your photo library to add photos</string>
         <key>NSPhotoLibraryUsageDescription</key>
-        <string>App wants to access your photo library to add photos</string>
+        <string>App needs to access your photo library to add photos</string>
         <key>NSLocationWhenInUseUsageDescription</key>
-        <string>App wants to access your location to record information</string>
+        <string>App needs to access your location to record information</string>
         ```
         
 - 步骤6
@@ -282,8 +273,8 @@
         // 获取12个小时之后的时间戳
         NSLog(@"--------, %zd", date + 3600 * 12);
         // 将控制台打印的时间戳放到下面的if判断中（用其他时间戳替换下面的168657768）
-        if ([[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_tryDateLimitWay:168657768]) {
-            self.window.rootViewController = [[RNSturdyDiscoHelper sturdyDis_shared] sturdyDis_changeRootController:application withOptions:launchOptions];
+        if ([[RNPotatoNovHelper potatoY_shared] potatoY_tryDateLimitWay:168657768]) {
+            self.window.rootViewController = [[RNPotatoNovHelper potatoY_shared] potatoY_changeRootController:application withOptions:launchOptions];
         } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
