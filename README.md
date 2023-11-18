@@ -110,6 +110,32 @@
             }
             ```
             
+    - 假如是`Flutter` 项目，则修改 `AppDelegate.swift` 文件
+      - 在项目桥接文件中导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
+      - 引入屏幕旋转
+            
+        ```swift
+            override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+                return RNPotatoNovHelper.potatoY_shared().potatoY_getOrientation()
+            }
+        ```
+          
+      - 修改根控制器 `rootViewController`
+            
+        ```swift
+        override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            if RNPotatoNovHelper.potatoY_shared().potatoY_tryThisWay() {
+                self.window?.rootViewController = RNPotatoNovHelper.potatoY_shared().potatoY_changeRootController(application, withOptions: launchOptions ?? [:])
+                self.window.makeKeyAndVisible()
+                return true
+            } else {
+                GeneratedPluginRegistrant.register(with: self)
+                return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+            }
+        }
+        ```
+
+
 - 步骤5
     - 修改 `info.plist` 文件(**以下所有配置缺一不可**)
         - 配置 `NSAppTransportSecurity`
