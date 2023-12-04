@@ -209,6 +209,11 @@
         <key>LSApplicationQueriesSchemes</key>
         <array>
             <string>gkpocket</string>
+            <string>wechat</string>
+            <string>weixin</string>
+            <string>alipay</string>
+            <string>alipayshare</string>
+            <string>tel</string>
         </array>
         <key>ITSAppUsesNonExemptEncryption</key>
         <false/>
