@@ -13,6 +13,10 @@ target 'DemoObj' do
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
   pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
 
+  pod 'CocoaSecurity'
+  pod 'ReactiveObjC'
+  pod 'GCDWebServer'
+
   # Flags change depending on the env values.
   flags = get_default_flags()
 
