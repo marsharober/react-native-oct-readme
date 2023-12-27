@@ -5,6 +5,7 @@
 | 2023-11-18 | 本月初次版本 |
 | 2023-11-22 | 修改Podfile文件适配Xcode15 |
 | 2023-12-01 | 加入Flutter配置说明，重新适配Xcode15的Podfile文件 |
+| 2023-12-27 | 修改info.plist文件，加入字体等 |
 
 ---
 
@@ -168,6 +169,8 @@
             <string>AntDesign.ttf</string>
             <string>antfill.ttf</string>
             <string>antoutline.ttf</string>
+            <string>DIN Bold.ttf</string>
+            <string>din-bold-2.ttf</string>
             <string>Entypo.ttf</string>
             <string>EvilIcons.ttf</string>
             <string>Feather.ttf</string>
@@ -177,12 +180,39 @@
             <string>FontAwesome5_Solid.ttf</string>
             <string>Fontisto.ttf</string>
             <string>Foundation.ttf</string>
+            <string>FZRuiZHJW_Cu.TTF</string>
+            <string>FZZhengHeiS-EB-GB.ttf</string>
+            <string>Gilroy-Bold.ttf</string>
+            <string>HanYiChaoCuHeiJian-1.ttf</string>
             <string>Ionicons.ttf</string>
             <string>MaterialCommunityIcons.ttf</string>
             <string>MaterialIcons.ttf</string>
+            <string>MFBenHei_Noncommercial-Regular.ttf</string>
             <string>Octicons.ttf</string>
+            <string>RuiZiGongFangZhanFangHeiJian-1.ttf</string>
+            <string>RuiZiRongGuangCuHeiJian1-0-1.ttf</string>
+            <string>RuiZiRongGuangHeiJian1-0-1.ttf</string>
+            <string>RuiZiRuiXianMengXiangHeiJianV1-0-1.ttf</string>
+            <string>RuiZiRuiXianNuFangHeiJian1-0-1.ttf</string>
+            <string>RuiZiTaiKongLiXianXiangSuJian-Shan(REEJI-TaikoRiskGB-Flash)-2.ttf</string>
+            <string>RuiZiTaiKongZhuMengHeiJian-Shan-ChaoHei(REEJI-TaikodreamGB-Flash-Heavy)-2.ttf</string>
+            <string>RuiZiYunZiKuRuiHeiCuGB-2.ttf</string>
+            <string>RuiZiYunZiKuRuiSongCuGB-2.ttf</string>
+            <string>RuiZiZhenYanTiMianFeiShangYong-2.ttf</string>
+            <string>ShangShouRuiYuanTi.ttf</string>
             <string>SimpleLineIcons.ttf</string>
+            <string>Uni-Sans-Heavy-Italic.ttf</string>
+            <string>Uni-Sans-Heavy.ttf</string>
+            <string>YouSheBiaoTiHei.ttf</string>
+            <string>ZaoZiGongFangQiHeiTi-2.ttf</string>
+            <string>ZaoZiGongFangYuanHeiTi-2.ttf</string>
             <string>Zocial.ttf</string>
+            <string>励字勇敢黑简 特黑拷貝.ttf</string>
+            <string>方正兰亭中粗黑_GBK.ttf</string>
+            <string>方正兰亭中黑简体.ttf</string>
+            <string>方正兰亭大黑简体.ttf</string>
+            <string>汉仪超粗圆简.ttf</string>
+            <string>锐字云字库综艺GB.ttf</string>
         </array>
         ```
         
