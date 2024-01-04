@@ -1,10 +1,25 @@
+#### 如何将RN项目集成到Flutter项目中
+
+* 复制以下文件到Flutter项目目录
+
+```bash
+package.json // 集成一下第三方库等
+metro.config.js
+index.js
+Gemfile
+babel.config.js
+app.json
+```
+
+复制成功以后执行 `yarn install` 命令
+
 #### Flutter项目Podfile配置
 
 - 目前适配Podfile的文件只提供一份，主要添加的代码有如下3个部分
 
     ![图片说明](../../../images/image_11.png)
 
-### 报错处理
+#### 报错处理
 
 在执行 `pod install` 可能会报错，可能出现的错误如下：
 
