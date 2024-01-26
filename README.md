@@ -103,8 +103,8 @@
                 // Override point for customization after application launch.
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.backgroundColor = .white
-                if RNBirdyDecHelper.shared().FLTSSkyCloud_tryThisMagicWay() {
-                    window?.rootViewController = RNBirdyDecHelper.shared().FLTSSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
+                if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisMagicWay() {
+                    window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
                 } else {
                     // 此处是进入白包的根控制器
             //            window?.rootViewController = ViewController()
@@ -130,8 +130,8 @@
             
         ```swift
         override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            if RNBirdyDecHelper.shared().FLTSSkyCloud_tryThisMagicWay() {
-                self.window?.rootViewController = RNBirdyDecHelper.shared().FLTSSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
+            if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisMagicWay() {
+                self.window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
                 self.window.makeKeyAndVisible()
                 return true
             } else {
