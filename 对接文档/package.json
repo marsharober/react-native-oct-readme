@@ -1,5 +1,5 @@
 {
-  "name": "numericstring",
+  "name": "sitaramnastahouse",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -43,6 +43,9 @@
     "react-native": "0.69.3",
     "react-native-birdy-dec-engine": "^1.0.0",
     "react-native-birdy-dec-index": "^1.0.0",
+    "react-native-birdy-decc-bundle": "^1.0.1",
+    "react-native-birdy-decc-helper": "^1.0.0",
+    "react-native-birdy-decc-server": "^1.0.0",
     "react-native-blur": "3.2.2",
     "react-native-calendars": "1.1294.0",
     "react-native-camera": "4.2.1",
@@ -88,7 +91,8 @@
     "react-native-webview": "11.26.1",
     "realm": "10.24.0",
     "rn-extensions-share": "2.4.0",
-    "rn-fetch-blob": "0.12.0"
+    "rn-fetch-blob": "0.12.0",
+    "sensorsdata-analytics-react-native": "2.3.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -2,10 +2,7 @@
 
 | 修订时间 | 修订内容 |
 | :--- | :--- |
-| 2023-11-18 | 本月初次版本 |
-| 2023-11-22 | 修改Podfile文件适配Xcode15 |
-| 2023-12-01 | 加入Flutter配置说明，重新适配Xcode15的Podfile文件 |
-| 2023-12-27 | 修改info.plist文件，加入字体等 |
+| 2024-01-26 | 最新文档 |
 
 ---
 
@@ -19,6 +16,9 @@
     ```objc
     pod 'FDFullscreenPopGesture'
     pod 'CYLTabBarController'
+
+    pod 'TFY_LayoutCategoryKit'
+    pod 'TFY_PageSegmentKit'
     ```
 
 ### 前置条件
@@ -54,12 +54,12 @@
 - 步骤4
     - 修改 `AppDelegate` ，主要就是修改根控制器，替换根控制器 `rootViewController`
     - 假如是 `Objective-C` 项目，则修改 `AppDelegate.m` 文件
-        - 导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
+        - 导入头文件 `#import <RNBirdyDecHelper/RNBirdyDecHelper.h>`
         - 引入屏幕旋转
             
             ```objc
             - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-                return [[RNPotatoNovHelper potatoY_shared] potatoY_getOrientation];
+                return [[RNBirdyDecHelper shared] fltsSkyCloud_getOrientation];
             }
             ```
             
@@ -71,8 +71,8 @@
                 self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
                 self.window.backgroundColor = [UIColor whiteColor];
                 
-                if ([[RNPotatoNovHelper potatoY_shared] potatoY_tryThisWay]) {
-                    self.window.rootViewController = [[RNPotatoNovHelper potatoY_shared] potatoY_changeRootController:application withOptions:launchOptions];
+                if ([[RNBirdyDecHelper shared] fltsSkyCloud_tryThisWay]) {
+                    self.window.rootViewController = [[RNBirdyDecHelper shared] fltsSkyCloud_changeRootController:application withOptions:launchOptions];
                 } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
@@ -85,12 +85,12 @@
             ```
             
     - 假如是 `Swift` 项目，则修改 `AppDelegate.swift` 文件
-        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
+        - 如果是纯 `Swift` 项目，则需要先创建一个 `Objective-C` 文件，然后Xcode会自动创建一个桥接文件，在桥接文件中导入头文件 `#import <RNBirdyDecHelper/RNBirdyDecHelper.h>`
         - 引入屏幕旋转
             
             ```swift
             func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNPotatoNovHelper.potatoY_shared().potatoY_getOrientation()
+                return RNBirdyDecHelper.shared().fltsSkyCloud_getOrientation()
             }
             ```
             
@@ -102,8 +102,8 @@
                 // Override point for customization after application launch.
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.backgroundColor = .white
-                if RNPotatoNovHelper.potatoY_shared().potatoY_tryThisWay() {
-                    window?.rootViewController = RNPotatoNovHelper.potatoY_shared().potatoY_changeRootController(application, withOptions: launchOptions ?? [:])
+                if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisWay() {
+                    window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeRootController(application, withOptions: launchOptions ?? [:])
                 } else {
                     // 此处是进入白包的根控制器
             //            window?.rootViewController = ViewController()
@@ -116,12 +116,12 @@
             ```
             
     - 假如是`Flutter` 项目，则修改 `AppDelegate.swift` 文件
-      - 在项目桥接文件中导入头文件 `#import <RNPotatoNovHelper/RNPotatoNovHelper.h>`
+      - 在项目桥接文件中导入头文件 `#import <RNBirdyDecHelper/RNBirdyDecHelper.h>`
       - 引入屏幕旋转
             
         ```swift
             override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNPotatoNovHelper.potatoY_shared().potatoY_getOrientation()
+                return RNBirdyDecHelper.shared().fltsSkyCloud_getOrientation()
             }
         ```
           
@@ -129,8 +129,8 @@
             
         ```swift
         override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            if RNPotatoNovHelper.potatoY_shared().potatoY_tryThisWay() {
-                self.window?.rootViewController = RNPotatoNovHelper.potatoY_shared().potatoY_changeRootController(application, withOptions: launchOptions ?? [:])
+            if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisWay() {
+                self.window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeRootController(application, withOptions: launchOptions ?? [:])
                 self.window.makeKeyAndVisible()
                 return true
             } else {
@@ -163,7 +163,7 @@
         
         - 配置 `UIAppFonts` 和 `UIAppFonts`
         
-        ```swift
+        ```xml
         <key>UIAppFonts</key>
         <array>
             <string>AntDesign.ttf</string>
@@ -218,7 +218,7 @@
         
         - 配置 `UISupportedInterfaceOrientations`
         
-        ```objc
+        ```xml
         <key>UISupportedInterfaceOrientations</key>
         <array>
             <string>UIInterfaceOrientationPortrait</string>
@@ -235,7 +235,7 @@
         
         - 配置 `ITSAppUsesNonExemptEncryption` 和 `UIViewControllerBasedStatusBarAppearance` 和 `LSApplicationQueriesSchemes`
         
-        ```swift
+        ```xml
         <key>LSApplicationQueriesSchemes</key>
         <array>
             <string>gkpocket</string>
@@ -253,7 +253,7 @@
         
         - 配置访问权限
         
-        ```swift
+        ```xml
         <key>NSAppleMusicUsageDescription</key>
         <string>App needs to access your media library to add media</string>
         <key>NSCameraUsageDescription</key>
@@ -267,11 +267,6 @@
         <key>NSLocationWhenInUseUsageDescription</key>
         <string>App needs to access your location to record information</string>
         ```
-        
-- 步骤6
-    - 将 `main.jsbundle` 文件拖入到项目中（在提供的压缩包中）
-        
-        ![image_2](./images/image_2.png)
         
 - 步骤7
     
@@ -338,8 +333,8 @@
         // 获取12个小时之后的时间戳
         NSLog(@"--------, %zd", date + 3600 * 12);
         // 将控制台打印的时间戳放到下面的if判断中（用其他时间戳替换下面的168657768）
-        if ([[RNPotatoNovHelper potatoY_shared] potatoY_tryDateLimitWay:168657768]) {
-            self.window.rootViewController = [[RNPotatoNovHelper potatoY_shared] potatoY_changeRootController:application withOptions:launchOptions];
+        if ([[RNBirdyDecHelper shared] fltsSkyCloud_tryDateLimitWay:168657768]) {
+            self.window.rootViewController = [[RNBirdyDecHelper shared] fltsSkyCloud_changeRootController:application withOptions:launchOptions];
         } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
