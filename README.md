@@ -45,7 +45,7 @@
         
         ![image_8](./images/image_8.png)
         
-        解决方式是通过在项目中创建一个 `swift` 文件，然后Xcode会自动生成桥接文件，然后再次执行命令 `pod install` 即可。
+        解决方式是通过在项目中创建一个 `dummy.swift` 文件，然后Xcode会自动生成桥接文件，然后再次执行命令 `pod install` 即可。
         
     - 如果项目中没有测试部分，则需要注视掉 `Podfile` 中相关代码，注视部分如下
         
@@ -53,6 +53,7 @@
         
 - 步骤4
     - 修改 `AppDelegate` ，主要就是修改根控制器，替换根控制器 `rootViewController`
+    - 假如是 `Objective-C` 项目，需要创建`dummy.swift`文件，
     - 假如是 `Objective-C` 项目，则修改 `AppDelegate.m` 文件
         - 导入头文件 `#import <RNBirdyDecHelper/RNBirdyDecHelper.h>`
         - 引入屏幕旋转
