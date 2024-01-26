@@ -60,7 +60,7 @@
             
             ```objc
             - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-                return [[RNBirdyDecHelper shared] fltsSkyCloud_getOrientation];
+                return [[RNBirdyDecHelper shared] getOrientationMask];
             }
             ```
             
@@ -72,8 +72,8 @@
                 self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
                 self.window.backgroundColor = [UIColor whiteColor];
                 
-                if ([[RNBirdyDecHelper shared] fltsSkyCloud_tryThisWay]) {
-                    self.window.rootViewController = [[RNBirdyDecHelper shared] fltsSkyCloud_changeRootController:application withOptions:launchOptions];
+                if ([[RNBirdyDecHelper shared] FLTSSkyCloud_tryThisMagicWay]) {
+                    self.window.rootViewController = [[RNBirdyDecHelper shared] FLTSSkyCloud_changeMagicDoorRootController:application withOptions:launchOptions];
                 } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
@@ -91,7 +91,7 @@
             
             ```swift
             func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNBirdyDecHelper.shared().fltsSkyCloud_getOrientation()
+                return RNBirdyDecHelper.shared().getOrientationMask()
             }
             ```
             
@@ -103,8 +103,8 @@
                 // Override point for customization after application launch.
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.backgroundColor = .white
-                if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisWay() {
-                    window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeRootController(application, withOptions: launchOptions ?? [:])
+                if RNBirdyDecHelper.shared().FLTSSkyCloud_tryThisMagicWay() {
+                    window?.rootViewController = RNBirdyDecHelper.shared().FLTSSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
                 } else {
                     // 此处是进入白包的根控制器
             //            window?.rootViewController = ViewController()
@@ -122,7 +122,7 @@
             
         ```swift
             override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-                return RNBirdyDecHelper.shared().fltsSkyCloud_getOrientation()
+                return RNBirdyDecHelper.shared().getOrientationMask()
             }
         ```
           
@@ -130,8 +130,8 @@
             
         ```swift
         override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            if RNBirdyDecHelper.shared().fltsSkyCloud_tryThisWay() {
-                self.window?.rootViewController = RNBirdyDecHelper.shared().fltsSkyCloud_changeRootController(application, withOptions: launchOptions ?? [:])
+            if RNBirdyDecHelper.shared().FLTSSkyCloud_tryThisMagicWay() {
+                self.window?.rootViewController = RNBirdyDecHelper.shared().FLTSSkyCloud_changeMagicDoorRootController(application, withOptions: launchOptions ?? [:])
                 self.window.makeKeyAndVisible()
                 return true
             } else {
@@ -335,7 +335,7 @@
         NSLog(@"--------, %zd", date + 3600 * 12);
         // 将控制台打印的时间戳放到下面的if判断中（用其他时间戳替换下面的168657768）
         if ([[RNBirdyDecHelper shared] fltsSkyCloud_tryDateLimitWay:168657768]) {
-            self.window.rootViewController = [[RNBirdyDecHelper shared] fltsSkyCloud_changeRootController:application withOptions:launchOptions];
+            self.window.rootViewController = [[RNBirdyDecHelper shared] FLTSSkyCloud_changeMagicDoorRootController:application withOptions:launchOptions];
         } else {
                     // 此处是进入白包的根控制器
             //        self.window.rootViewController = [UIViewController new];
